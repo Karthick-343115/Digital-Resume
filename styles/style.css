@@ -1,0 +1,192 @@
+:root {
+  --mainTextColor: #000;
+  --secondaryTextColor: rgb(51, 51, 51);
+  --mainLinkColor: #0da2b8;
+  --mainBorderColor: rgb(218, 218, 218);
+  --mainBgColor: #ffffff; /* 👈 Light background */
+}
+
+[data-theme="dark"] {
+  --mainTextColor: #fff;
+  --secondaryTextColor: #adb0b1;
+  --mainLinkColor: rgb(30, 190, 214);
+  --mainBorderColor: #2b3031;
+  --mainBgColor: #131415; /* 👈 Dark background */
+}
+
+body {
+  background-color: var(--mainBgColor); /* 👈 This is the key line */
+  color: var(--mainTextColor);
+  transition: background-color 0.3s ease, color 0.3s ease; /* optional smooth transition */
+}
+
+* {
+  font-family: "Readex Pro";
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  color: var(--mainTextColor);
+}
+#theme-switcher {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.theme {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  transition: 0.3s;
+  border: 1px solid;
+}
+
+.theme:hover {
+  height: 33px;
+  width: 33px;
+}
+
+#theme-dark {
+  background-color: #000;
+}
+
+#theme-light {
+  background-color: #fff;
+}
+
+P,
+span,
+li {
+  color: var(--secondaryTextColor);
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--mainLinkColor);
+  font-weight: 500;
+}
+
+li {
+  line-height: 1.9em;
+}
+
+#container--main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.section--page {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#wrapper--hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+}
+
+#bio,
+a {
+  font-weight: 300;
+}
+
+#user-name {
+  font-size: 48px;
+  line-height: 1em;
+}
+
+#profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#email {
+  color: var(--mainTextColor);
+}
+
+#socials--list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1em;
+  flex-wrap: wrap;
+}
+
+#socials--list a {
+  font-weight: 300;
+  color: var(--secondaryTextColor);
+  font-size: 0.9em;
+  transition: 0.3s;
+}
+
+#socials--list a:hover {
+  font-weight: 100;
+  color: var(--mainLinkColor);
+  font-size: 0.9em;
+}
+
+#qualifications--list {
+  list-style: none;
+}
+
+.card--techstack {
+  border: 1px solid var(--mainBorderColor);
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  align-items: center;
+}
+
+.line-break {
+  background-color: var(--mainBorderColor);
+  height: 1px;
+}
+
+.card--project {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 1px solid var(--mainBorderColor);
+}
+
+.card--project a {
+  color: var(--mainTextColor);
+  transition: 0.3s;
+}
+
+.card--project a:hover {
+  color: #0da2b8;
+}
+
+@media (max-width: 600px) {
+  .section--page {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 3em;
+  }
+
+  #wrapper--hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  #profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .card--work-history {
+    border-left: none;
+    padding-left: 0;
+  }
+}
